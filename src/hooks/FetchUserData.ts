@@ -18,7 +18,7 @@ function useFetchData(url: string, options?: RequestInit) {
       try {
         const response = await fetch(url, { ...options, signal: controller.signal });
         if (!response.ok) {
-          throw new Error(HTTP error! status: ${response.status});
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
         setData(result);
